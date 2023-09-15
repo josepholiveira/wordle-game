@@ -1,10 +1,15 @@
 import { FormEvent, useState } from 'react'
+import { IGameStatuses } from '../Game'
 
 interface GuessInputProps {
   handleAddUserGuess: (guess: string) => void
+  gameStatus: IGameStatuses
 }
 
-export function GuessInput({ handleAddUserGuess }: GuessInputProps) {
+export function GuessInput({
+  handleAddUserGuess,
+  gameStatus,
+}: GuessInputProps) {
   const [guessInput, setGuessInput] = useState('')
 
   function handleSubmitGuess(event: FormEvent<HTMLFormElement>) {
@@ -18,6 +23,7 @@ export function GuessInput({ handleAddUserGuess }: GuessInputProps) {
     <form onSubmit={handleSubmitGuess} className="guess-input-wrapper">
       <label htmlFor="guess-input">Enter guess:</label>
       <input
+        disabled={gameStatus !== 'running'}
         id="guess-input"
         type="text"
         minLength={5}
