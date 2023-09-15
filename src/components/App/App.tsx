@@ -1,5 +1,5 @@
-import { Game } from '../Game';
-import { Header } from '../Header';
+import { Game } from '../Game'
+import { Header } from '../Header'
 
 export function App() {
   return (
@@ -10,5 +10,5 @@ export function App() {
         <Game />
       </div>
     </div>
-  );
+  )
 }

@@ -22,6 +22,7 @@
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "devDependencies": {
+    "@rocketseat/eslint-config": "^2.1.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "typescript": "^5.2.2"
