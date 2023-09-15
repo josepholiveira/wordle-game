@@ -1,7 +1,7 @@
-import Game from '../Game';
-import Header from '../Header';
+import { Game } from '../Game';
+import { Header } from '../Header';
 
-function App() {
+export function App() {
   return (
     <div className="wrapper">
       <Header />
@@ -12,5 +12,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
