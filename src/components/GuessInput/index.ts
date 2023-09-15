@@ -1,1 +1,1 @@
-export * from './GuessInput';
+export * from './GuessInput'

@@ -10,13 +10,13 @@ const answer = sample(WORDS)
 // To make debugging easier, we'll log the solution in the console.
 console.info({ answer })
 
-export type Guess = {
+export type IGuess = {
   id: string
   word: string
 }
 
 export function Game() {
-  const [guesses, setGuesses] = useState<Guess[]>([])
+  const [guesses, setGuesses] = useState<IGuess[]>([])
 
   function handleAddUserGuess(guessInput: string) {
     const newGuess = {
