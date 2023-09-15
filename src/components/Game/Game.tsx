@@ -4,6 +4,7 @@ import { sample } from '../../utils'
 import { WORDS } from '../../data'
 import { GuessInput } from '../GuessInput'
 import { GuessTable } from '../GuessTable'
+import { checkGuess } from '@/game-helpers'
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS)
@@ -29,9 +30,15 @@ export function Game() {
     setGuesses(nextUserGuesses)
   }
 
+  const checkedGuesses = guesses.map((guess) => {
+    const checkedGuess = checkGuess(guess.word, answer)
+
+    return checkedGuess
+  })
+
   return (
     <>
-      <GuessTable guesses={guesses} />
+      <GuessTable checkedGuesses={checkedGuesses} />
       <GuessInput handleAddUserGuess={handleAddUserGuess} />
     </>
   )

@@ -10,8 +10,6 @@ export function GuessInput({ handleAddUserGuess }: GuessInputProps) {
   function handleSubmitGuess(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    console.log({ guessInput })
-
     handleAddUserGuess(guessInput)
     setGuessInput('')
   }

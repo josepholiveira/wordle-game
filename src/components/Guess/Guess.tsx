@@ -1,17 +1,23 @@
 import { range } from '@/utils'
-import { IGuess } from '../Game'
+import { Cell } from '../Cell'
 
 interface GuessProps {
-  guess?: IGuess
+  checkedGuess?: {
+    letter: string
+    status: string
+  }[]
 }
 
-export function Guess({ guess }: GuessProps) {
+export function Guess({ checkedGuess }: GuessProps) {
   return (
     <p className="guess">
       {range(5).map((number) => (
-        <span key={number} className="cell">
-          {guess?.word[number]}
-        </span>
+        <Cell
+          key={number}
+          letter={checkedGuess?.[number].letter}
+          status={checkedGuess?.[number].status}
+          number={number}
+        />
       ))}
     </p>
   )

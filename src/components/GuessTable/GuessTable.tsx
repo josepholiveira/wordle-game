@@ -4,14 +4,17 @@ import { NUM_OF_GUESSES_ALLOWED } from '@/constants'
 import { Guess } from '../Guess'
 
 interface GuessTableProps {
-  guesses: IGuess[]
+  checkedGuesses: {
+    letter: string
+    status: string
+  }[][]
 }
 
-export function GuessTable({ guesses }: GuessTableProps) {
+export function GuessTable({ checkedGuesses }: GuessTableProps) {
   return (
     <div className="guess-results">
       {range(NUM_OF_GUESSES_ALLOWED).map((number) => (
-        <Guess key={number} guess={guesses[number]} />
+        <Guess key={number} checkedGuess={checkedGuesses[number]} />
       ))}
     </div>
   )

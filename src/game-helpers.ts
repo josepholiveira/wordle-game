@@ -8,10 +8,6 @@ export function checkGuess(guess: string, answer: string) {
   // dealt with this character (it's correct, or misplaced).
   const SOLVED_CHAR = '✓'
 
-  if (!guess) {
-    return null
-  }
-
   const guessChars = guess.toUpperCase().split('')
   const answerChars = answer.split('')
 
