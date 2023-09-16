@@ -44,9 +44,7 @@ export function Game() {
 
     if (guessInput === answer) {
       setGameStatus('won')
-    }
-
-    if (nextUserGuesses.length >= NUM_OF_GUESSES_ALLOWED) {
+    } else if (nextUserGuesses.length >= NUM_OF_GUESSES_ALLOWED) {
       setGameStatus('lost')
     }
 
